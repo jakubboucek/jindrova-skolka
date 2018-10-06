@@ -1,5 +1,5 @@
-# Jindrova školka - Lekce 1
+# Jindrova školka - Lekce 2
 **Téma: Git, GitHub, clonování, první commit**
 
 ## Zadání
-Tento repozitář si naklonuj do svého počítače, oprav tento překlep a commitni opravu zpět na GitHub.
+Do formuláře v souboru `index.php` předvyplň nějaká data.
