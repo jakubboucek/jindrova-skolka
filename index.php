@@ -29,24 +29,24 @@
         <form action="" method="post">
             <div class="form-group">
                 <label for="name">Jméno</label>
-                <input type="text" class="form-control" name="name" value="">
+                <input type="text" class="form-control" name="name" value="Jan Novák">
             </div>
             <div class="form-group">
                 <label for="username">Uživatelské jméno</label>
-                <input type="text" class="form-control" name="username" id="username"
-                       value="" autocomplete="username">
+                <input type="text" class="form-control" name="username" id=""
+                       value="User" autocomplete="username">
             </div>
             <div class="form-group">
                 <label for="password">Heslo</label>
-                <input type="password" class="form-control" name="password">
+                <input type="password" class="form-control" name="" value="*****">
             </div>
             <div class="form-group">
                 <label for="phone">Telefon</label>
-                <input type="text" class="form-control" name="phone" value="">
+                <input type="text" class="form-control" name="phone" value="123456789">
             </div>
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="text" class="form-control" name="email" value="">
+                <input type="text" class="form-control" name="email" value="example@example.com">
             </div>
             <input type="submit" name="submit" value="Registrovat se" class="btn btn-primary">
         </form>
