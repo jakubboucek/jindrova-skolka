@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="username">Uživatelské jméno</label>
-                <input type="text" class="form-control" name="username" id=""
+                <input type="text" class="form-control" name="username" id="username"
                        value="User" autocomplete="username">
             </div>
             <div class="form-group">
