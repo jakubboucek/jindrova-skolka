@@ -17,38 +17,56 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1>Jindrova školka – Lekce 1</h1>
-        <p><strong>Git, první commit</strong></p>
+        <h1>Jindrova školka – Lekce 3</h1>
+        <p><strong>PHP</strong></p>
         <div class="row">
             <div class="col-sm-12">
-                <h3>Zadání</h3>
+                <h3>Odeslaná data</h3>
 
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width:20%">Jméno</th>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>Uživatelské jméno</th>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>Telefon</th>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>E-mail</th>
+                        <td>-</td>
+                    </tr>
+                </table>
             </div>
         </div>
 
+        <h3>Formulář</h3>
         <form action="" method="post">
             <div class="form-group">
                 <label for="name">Jméno</label>
-                <input type="text" class="form-control" name="name" value="Jan Novák">
+                <input type="text" class="form-control" name="name" value="">
             </div>
             <div class="form-group">
                 <label for="username">Uživatelské jméno</label>
-                <input type="text" class="form-control" name="username" id="username"
-                       value="User" autocomplete="username">
+                <input type="text" class="form-control" name="username" value="">
             </div>
             <div class="form-group">
                 <label for="password">Heslo</label>
-                <input type="password" class="form-control" name="" value="*****">
+                <input type="password" class="form-control" name="password">
             </div>
             <div class="form-group">
                 <label for="phone">Telefon</label>
-                <input type="text" class="form-control" name="phone" value="123456789">
+                <input type="text" class="form-control" name="phone" value="">
             </div>
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="text" class="form-control" name="email" value="example@example.com">
+                <input type="text" class="form-control" name="email" value="">
             </div>
-            <input type="submit" name="submit" value="Registrovat se" class="btn btn-primary">
+            <input type="submit" name="submit" value="Odeslat" class="btn btn-primary">
         </form>
     </div>
 </div>
