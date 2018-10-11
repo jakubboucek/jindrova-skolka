@@ -22,23 +22,29 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3>Odeslaná data</h3>
-
+<?php
+if ($_POST){
+	$data = $_POST;
+}else{
+	$data['name'] = $data['username'] = $data['phone'] = $data['email'] = '-';
+}
+?>
                 <table class="table table-bordered">
                     <tr>
                         <th style="width:20%">Jméno</th>
-                        <td>-</td>
+                        <td><?=$data['name']?></td>
                     </tr>
                     <tr>
                         <th>Uživatelské jméno</th>
-                        <td>-</td>
+                        <td><?=$data['username']?></td>
                     </tr>
                     <tr>
                         <th>Telefon</th>
-                        <td>-</td>
+                        <td><?=$data['phone']?></td>
                     </tr>
                     <tr>
                         <th>E-mail</th>
-                        <td>-</td>
+                        <td><?=$data['email']?></td>
                     </tr>
                 </table>
             </div>
