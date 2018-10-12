@@ -25,7 +25,7 @@
 <?php
 if ($_POST){
 	foreach($_POST as $key => $value){
-		$data[$key] = strip_tags($value);
+		$data[$key] = htmlspecialchars($value);
 	}
 }else{
 	$data['name'] = $data['username'] = $data['phone'] = $data['email'] = '-';
