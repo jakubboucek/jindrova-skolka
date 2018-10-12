@@ -17,12 +17,12 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1>Jindrova školka – Lekce 3</h1>
-        <p><strong>PHP</strong></p>
+        <h1>Jindrova školka – Lekce 4</h1>
+        <p><strong>PHP - Ošetření vstupu</strong></p>
         <div class="row">
             <div class="col-sm-12">
                 <h3>Odeslaná data</h3>
-<?php
+                <?php
 if ($_POST){
 	foreach($_POST as $key => $value){
 		$data[$key] = htmlspecialchars($value);
@@ -53,6 +53,9 @@ if ($_POST){
         </div>
 
         <h3>Formulář</h3>
+        <div class="alert alert-danger">
+            Chyba... zde bude popis, co se stalo
+        </div>
         <form action="" method="post">
             <div class="form-group">
                 <label for="name">Jméno</label>
