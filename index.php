@@ -24,7 +24,7 @@
                 <h3>Odeslaná data</h3>
 <?php
 if ($_POST){
-	$data = $_POST;
+	$data = preg_replace("/<.+>/sU", "", $_POST);
 }else{
 	$data['name'] = $data['username'] = $data['phone'] = $data['email'] = '-';
 }
