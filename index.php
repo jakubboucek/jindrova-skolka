@@ -15,6 +15,25 @@
           integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 </head>
 <body>
+<?php
+include_once "/modules/run.php";
+if($_POST){
+	foreach($_POST as $key => $value){
+		$data[$key] = htmlspecialchars($value);
+	}
+	if(validate($data['name']) && validate($data['username']) && validate($data['password'])){
+		$tableData = $data;
+		/*$phoneData = validate($data['phone']);
+		if($phoneData){
+			$error = ($phoneData['length'] == 9 && $phoneData['isNumber']) ? '' : 'Neplatné telefonní číslo.';
+		}*/
+	}else{
+		$error = 'Nebyly vyplněny všechny povinné položky.';
+	}
+}else{
+	$data['name'] = $data['username'] = $data['phone'] = $data['email'] = '-';
+}
+?>
 <div class="container">
     <div class="jumbotron">
         <h1>Jindrova školka – Lekce 4</h1>
@@ -22,48 +41,46 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3>Odeslaná data</h3>
-                <?php
-if ($_POST){
-	foreach($_POST as $key => $value){
-		$data[$key] = htmlspecialchars($value);
-	}
-}else{
-	$data['name'] = $data['username'] = $data['phone'] = $data['email'] = '-';
-}
-?>
                 <table class="table table-bordered">
                     <tr>
                         <th style="width:20%">Jméno</th>
-                        <td><?=$data['name']?></td>
+                        <td><?=$tableData['name']?></td>
                     </tr>
                     <tr>
                         <th>Uživatelské jméno</th>
-                        <td><?=$data['username']?></td>
+                        <td><?=$tableData['username']?></td>
                     </tr>
                     <tr>
                         <th>Telefon</th>
-                        <td><?=$data['phone']?></td>
+                        <td><?=$tableData['phone']?></td>
                     </tr>
                     <tr>
                         <th>E-mail</th>
-                        <td><?=$data['email']?></td>
+                        <td><?=$tableData['email']?></td>
                     </tr>
                 </table>
             </div>
         </div>
 
         <h3>Formulář</h3>
-        <div class="alert alert-danger">
-            Chyba... zde bude popis, co se stalo
-        </div>
+		<?php
+		if($error){
+			$formValues = $data;
+			?>
+		    <div class="alert alert-danger">
+				<?=$error?>
+			</div>	
+			<?php
+		}
+		?>
         <form action="" method="post">
             <div class="form-group">
                 <label for="name">Jméno</label>
-                <input type="text" class="form-control" name="name" value="">
+                <input type="text" class="form-control" name="name" value="<?=$formValues['name']?>">
             </div>
             <div class="form-group">
                 <label for="username">Uživatelské jméno</label>
-                <input type="text" class="form-control" name="username" value="">
+                <input type="text" class="form-control" name="username" value="<?=$formValues['username']?>">
             </div>
             <div class="form-group">
                 <label for="password">Heslo</label>
@@ -71,11 +88,11 @@ if ($_POST){
             </div>
             <div class="form-group">
                 <label for="phone">Telefon</label>
-                <input type="text" class="form-control" name="phone" value="">
+                <input type="text" class="form-control" name="phone" value="<?=$formValues['phone']?>">
             </div>
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="text" class="form-control" name="email" value="">
+                <input type="text" class="form-control" name="email" value="<?=$formValues['email']?>">
             </div>
             <input type="submit" name="submit" value="Odeslat" class="btn btn-primary">
         </form>
