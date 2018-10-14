@@ -16,7 +16,10 @@
 </head>
 <body>
 <?php
-include_once "/modules/run.php";
+require_once __DIR__."/modules/run.php";
+$tableData = array('name' => '', 'username' => '', 'phone' => '', 'email' => '');
+$formValues = array('name' => '', 'username' => '', 'phone' => '', 'email' => '');
+$error = null;
 if($_POST){
 	foreach($_POST as $key => $value){
 		$data[$key] = htmlspecialchars($value);

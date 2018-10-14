@@ -1,2 +1,2 @@
 <?php
-include_once "validate.php";
+require_once __DIR__."/validate.php";
