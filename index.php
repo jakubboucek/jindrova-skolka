@@ -31,6 +31,7 @@ if($_POST){
 			$error = ($phoneData['length'] == 9 && $phoneData['isNumber']) ? '' : 'Neplatné telefonní číslo.';
 		}*/
 	}else{
+		$requiredFields = ((validate($data['name'])) ? 0 : 1) + ((validate($data['username'])) ? 0 : 2) + ((validate($data['username'])) ? 0 : 4);
 		$error = 'Nebyly vyplněny všechny povinné položky.';
 	}
 }else{
@@ -77,15 +78,15 @@ if($_POST){
 		}
 		?>
         <form action="" method="post">
-            <div class="form-group">
+            <div class="form-group <?=($requiredFields & 1) ? 'has-error' : ''?>">
                 <label for="name">Jméno</label>
                 <input type="text" class="form-control" name="name" value="<?=$formValues['name']?>">
             </div>
-            <div class="form-group">
+            <div class="form-group <?=($requiredFields & 2) ? 'has-error' : ''?>">
                 <label for="username">Uživatelské jméno</label>
                 <input type="text" class="form-control" name="username" value="<?=$formValues['username']?>">
             </div>
-            <div class="form-group">
+            <div class="form-group <?=($requiredFields & 4) ? 'has-error' : ''?>">
                 <label for="password">Heslo</label>
                 <input type="password" class="form-control" name="password">
             </div>
