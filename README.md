@@ -1,13 +1,24 @@
-# Jindrova školka - Lekce 4
-**Téma: PHP - Ošetření vstupu**
+# Jindrova školka - Lekce 5
+**Téma: PHP - Ošetření vstupu II.**
 
 ## Zadání
 V souboru `index.php` je formulář. Po jeho odeslání se nyní nic nestane. Tvým
 úkolem je přidat PHP kód, který odeslání formuláře zpracuje a odeslané hodnoty
 vypíše do připravené tabulky `Odeslaná data`.
 
-Nově bude při odelání prováděna kontrola dat. Uživatel musí pro úspěšné odeslání
+Při odelání bude prováděna kontrola dat. Uživatel musí pro úspěšné odeslání
 formuláře vyplnit povinná pole a to: `Jméno`, `Uživatelské jméno` a `Heslo`. 
+
+Nově bude probíhat validace formuláře takto:
+- platí všechny podmínky z minulého úkolu,
+- Uživatelské jméno se může skládat pouze z písmen `a`-`z` (i velké) a teček `.`,
+- Heslo musí mít nejméně 6 znaků,
+- Telefon se může skládat pouze z čísel s tím, že jich musí být přesně 9, ale mohou
+být libovolně rozdělené mezerami,
+- E-mail musí mít formát e-mailové adresy. 
+
+Nepovinná pole mohou zůstat prázdná – v takovém případě se neprovádí validace (tedy
+když uživatel nevyplní e-mail, nesmí to křičet, že to není platný formát).
 
 V případě, že uživatel nesplní požadavek, zobrazí se v přípraveném červeném poli
 chyba.
