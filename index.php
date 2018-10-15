@@ -24,12 +24,27 @@ if($_POST){
 	foreach($_POST as $key => $value){
 		$data[$key] = htmlspecialchars($value);
 	}
+	$data['phone'] = str_replace(' ','',$data['phone']);
 	if(validate($data['name']) && validate($data['username']) && validate($data['password'])){
-		$tableData = $data;
-		/*$phoneData = validate($data['phone']);
-		if($phoneData){
-			$error = ($phoneData['length'] == 9 && $phoneData['isNumber']) ? '' : 'Neplatné telefonní číslo.';
-		}*/
+		if(validate($data['password'])['length'] >= 6){
+			$username = validate($data['username']);
+			if($username['isText'] && !$username['hasNumber']){
+				$email = validate($data['email']);
+				if($email['isEmail'] || !$email){
+					$tableData = $data;
+					$phoneData = validate($data['phone']);
+					if($phoneData){
+						$error = ($phoneData['length'] == 9 && $phoneData['isNumber']) ? '' : 'Neplatné telefonní číslo.';
+					}		
+				}else{
+					$error = 'Neplatný email.';
+				}
+			}else{
+				$error = 'Neplatné uživatelské jméno.';
+			}
+		}else{
+			$error = 'Heslo musí obsahovat alespoň 6 znaků.';
+		}
 	}else{
 		$requiredFields = ((validate($data['name'])) ? 0 : 1) + ((validate($data['username'])) ? 0 : 2) + ((validate($data['username'])) ? 0 : 4);
 		$error = 'Nebyly vyplněny všechny povinné položky.';
