@@ -79,16 +79,16 @@ if($_POST){
 		?>
         <form action="" method="post">
             <div class="form-group <?=($requiredFields & 1) ? 'has-error' : ''?>">
-                <label for="name">Jméno</label>
-                <input type="text" class="form-control" name="name" value="<?=$formValues['name']?>">
+                <label for="name">Jméno *</label>
+                <input type="text" class="form-control" name="name" required value="<?=$formValues['name']?>">
             </div>
             <div class="form-group <?=($requiredFields & 2) ? 'has-error' : ''?>">
-                <label for="username">Uživatelské jméno</label>
-                <input type="text" class="form-control" name="username" value="<?=$formValues['username']?>">
+                <label for="username">Uživatelské jméno *</label>
+                <input type="text" class="form-control" name="username" required value="<?=$formValues['username']?>">
             </div>
             <div class="form-group <?=($requiredFields & 4) ? 'has-error' : ''?>">
-                <label for="password">Heslo</label>
-                <input type="password" class="form-control" name="password">
+                <label for="password">Heslo *</label>
+                <input type="password" class="form-control" name="password" required>
             </div>
             <div class="form-group">
                 <label for="phone">Telefon</label>
