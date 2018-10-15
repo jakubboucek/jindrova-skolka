@@ -40,8 +40,8 @@ if($_POST){
 ?>
 <div class="container">
     <div class="jumbotron">
-        <h1>Jindrova školka – Lekce 4</h1>
-        <p><strong>PHP - Ošetření vstupu</strong></p>
+        <h1>Jindrova školka – Lekce 5</h1>
+        <p><strong>PHP - Ošetření vstupu II.</strong></p>
         <div class="row">
             <div class="col-sm-12">
                 <h3>Odeslaná data</h3>
