@@ -30,9 +30,9 @@ if($_POST){
 	if(!(validate($data['name']) && validate($data['username']) && validate($data['password']))){
 		$requiredFields = ((validate($data['name'])) ? 0 : 1) + ((validate($data['username'])) ? 0 : 2) + ((validate($data['username'])) ? 0 : 4);
 		$error = 'Nebyly vyplněny všechny povinné položky.';
-	}elseif(!(validate($data['password'])['length'] >= 6)){
+	}elseif(!(strlen($data['password']) >=6 && validate($data['password'])['isText'])){
 		$error = 'Heslo musí obsahovat alespoň 6 znaků.';
-	}elseif(!$username['isText'] && $username['hasNumber']){
+	}elseif(!($username['isText'] || $username['hasNumber'])){
 		$error = 'Neplatné uživatelské jméno.';
 	}elseif(!$email['isEmail'] && $email){
 		$error = 'Neplatný email.';
